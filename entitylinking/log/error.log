@@ -1,0 +1,51 @@
+2016-10-22 10:28:14,315 ERROR - HHH000319: Could not get database metadata
+java.sql.SQLException: Connections could not be acquired from the underlying database!
+	at com.mchange.v2.sql.SqlUtils.toSQLException(SqlUtils.java:106)
+	at com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool.checkoutPooledConnection(C3P0PooledConnectionPool.java:529)
+	at com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource.getConnection(AbstractPoolBackedDataSource.java:128)
+	at org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider.getConnection(C3P0ConnectionProvider.java:84)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:194)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:178)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:497)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1744)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1782)
+	at de.tudarmstadt.ukp.wikipedia.api.hibernate.WikiHibernateUtil.getSessionFactory(WikiHibernateUtil.java:42)
+	at de.tudarmstadt.ukp.wikipedia.api.Wikipedia.__getHibernateSession(Wikipedia.java:760)
+	at de.tudarmstadt.ukp.wikipedia.api.MetaData.<init>(MetaData.java:39)
+	at de.tudarmstadt.ukp.wikipedia.api.Wikipedia.<init>(Wikipedia.java:78)
+	at com.entitylinking.entitylinking.WikiConfig.getWiki(WikiConfig.java:24)
+	at com.entitylinking.entitylinking.GenerateDictionary2.recordPageTable(GenerateDictionary2.java:108)
+	at com.entitylinking.entitylinking.GenerateDictionary2.main(GenerateDictionary2.java:97)
+Caused by: com.mchange.v2.resourcepool.CannotAcquireResourceException: A ResourcePool could not acquire a resource from its primary factory or source.
+	at com.mchange.v2.resourcepool.BasicResourcePool.awaitAvailable(BasicResourcePool.java:1319)
+	at com.mchange.v2.resourcepool.BasicResourcePool.prelimCheckoutResource(BasicResourcePool.java:557)
+	at com.mchange.v2.resourcepool.BasicResourcePool.checkoutResource(BasicResourcePool.java:477)
+	at com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool.checkoutPooledConnection(C3P0PooledConnectionPool.java:525)
+	... 15 more
+2016-10-22 10:28:14,316 ERROR - HHH000299: Could not complete schema update
+java.sql.SQLException: Connections could not be acquired from the underlying database!
+	at com.mchange.v2.sql.SqlUtils.toSQLException(SqlUtils.java:106)
+	at com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool.checkoutPooledConnection(C3P0PooledConnectionPool.java:529)
+	at com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource.getConnection(AbstractPoolBackedDataSource.java:128)
+	at org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider.getConnection(C3P0ConnectionProvider.java:84)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:194)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:178)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:497)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1744)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1782)
+	at de.tudarmstadt.ukp.wikipedia.api.hibernate.WikiHibernateUtil.getSessionFactory(WikiHibernateUtil.java:42)
+	at de.tudarmstadt.ukp.wikipedia.api.Wikipedia.__getHibernateSession(Wikipedia.java:760)
+	at de.tudarmstadt.ukp.wikipedia.api.MetaData.<init>(MetaData.java:39)
+	at de.tudarmstadt.ukp.wikipedia.api.Wikipedia.<init>(Wikipedia.java:78)
+	at com.entitylinking.entitylinking.WikiConfig.getWiki(WikiConfig.java:24)
+	at com.entitylinking.entitylinking.GenerateDictionary2.recordPageTable(GenerateDictionary2.java:108)
+	at com.entitylinking.entitylinking.GenerateDictionary2.main(GenerateDictionary2.java:97)
+Caused by: com.mchange.v2.resourcepool.CannotAcquireResourceException: A ResourcePool could not acquire a resource from its primary factory or source.
+	at com.mchange.v2.resourcepool.BasicResourcePool.awaitAvailable(BasicResourcePool.java:1319)
+	at com.mchange.v2.resourcepool.BasicResourcePool.prelimCheckoutResource(BasicResourcePool.java:557)
+	at com.mchange.v2.resourcepool.BasicResourcePool.checkoutResource(BasicResourcePool.java:477)
+	at com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool.checkoutPooledConnection(C3P0PooledConnectionPool.java:525)
+	... 15 more
+2016-10-22 10:32:24,337 ERROR - Connections could not be acquired from the underlying database!
